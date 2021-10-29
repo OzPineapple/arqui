@@ -1,0 +1,6 @@
+#Start recording tcl command: 8/19/2021 10:59:47
+#Project Location: /home/oz/docs/school/ESCOM/periods/6/arqui/repo/and00; Project name: and00
+prj_project new -name "and00" -impl "impl1" -dev LCMXO2-7000HE-4TG144C -synthesis "synplify"
+prj_project save
+prj_src add "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/and00/and00.vhdl"
+#Stop recording: 8/19/2021 11:56:36

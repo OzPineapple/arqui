@@ -1,0 +1,77 @@
+$date
+  Thu Sep 30 11:42:40 2021
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module std_logic_arith $end
+$upscope $end
+$scope module std_logic_unsigned $end
+$upscope $end
+$scope module test $end
+$var reg 1 ! sel $end
+$var reg 8 " anum[7:0] $end
+$var reg 8 # bnum[7:0] $end
+$var reg 8 $ sum[7:0] $end
+$scope module adder $end
+$var reg 1 % sel $end
+$var reg 8 & anum[7:0] $end
+$var reg 8 ' bnum[7:0] $end
+$var reg 8 ( sum[7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+b00000011 "
+b00000100 #
+b00000111 $
+0%
+b00000011 &
+b00000100 '
+b00000111 (
+#20000000
+b01000000 "
+b01000010 #
+b10000010 $
+b01000000 &
+b01000010 '
+b10000010 (
+#40000000
+b10000001 "
+b10000000 #
+b00000001 $
+b10000001 &
+b10000000 '
+b00000001 (
+#60000000
+1!
+b00000011 "
+b00000100 #
+b11111111 $
+1%
+b00000011 &
+b00000100 '
+b11111111 (
+#80000000
+b01000000 "
+b01000010 #
+b11111110 $
+b01000000 &
+b01000010 '
+b11111110 (
+#100000000
+b10000001 "
+b10000000 #
+b00000001 $
+b10000001 &
+b10000000 '
+b00000001 (
+#120000000

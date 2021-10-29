@@ -1,0 +1,9 @@
+#Start recording tcl command: 8/24/2021 08:33:40
+#Project Location: /home/oz/docs/school/ESCOM/periods/6/arqui/repo/and00; Project name: and00
+prj_project open "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/and00/and00.ldf"
+prj_src add "/home/oz/docs/school/ESCOM/periods/6/arqui/repo//and00/and00.spf"
+prj_src add "/home/oz/docs/school/ESCOM/periods/6/arqui/repo//and00/and00.spf"
+prj_src add "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/and00/and00/and00.spf"
+prj_src add "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/and00/and00/and00.spf"
+prj_src add "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/and00/and00/and00.spf"
+#Stop recording: 8/24/2021 09:40:07

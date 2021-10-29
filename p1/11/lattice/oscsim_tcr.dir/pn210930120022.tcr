@@ -1,0 +1,5 @@
+#Start recording tcl command: 9/30/2021 11:45:56
+#Project Location: /home/oz/docs/school/ESCOM/periods/6/arqui/repo/p1/11/lattice; Project name: oscsim
+prj_project open "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/p1/11/lattice/oscsim.ldf"
+prj_src add "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/p1/11/lattice/tets/tets.spf"
+#Stop recording: 9/30/2021 12:00:22

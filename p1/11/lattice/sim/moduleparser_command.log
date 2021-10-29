@@ -1,0 +1,1 @@
+/usr/local/diamond/3.12/bin/lin64/moduleparser -PROJ sim -pf /usr/local/diamond/3.12/cae_library/synthesis/vhdl/machxo2.vhd -lib machxo2 -pf /usr/local/diamond/3.12/cae_library/synthesis/verilog/machxo2.v -pkg /usr/local/diamond/3.12/cae_library/vhdl_packages/vdbs -lst /home/oz/docs/school/ESCOM/periods/6/arqui/repo/11/lattice/sim/source_files.lst

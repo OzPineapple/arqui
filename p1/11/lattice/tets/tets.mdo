@@ -1,0 +1,17 @@
+if {![file exists "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/p1/11/lattice/tets/tets.mpf"]} { 
+	project new "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/p1/11/lattice/tets" tets
+	project addfile "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/p1/11/osc/and00.vhdl"
+	project addfile "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/p1/11/osc/osctestbench00.vhdl"
+	vlib  work
+	vdel -lib work -all 
+	vlib work
+	vcom -work work "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/p1/11/osc/and00.vhdl"
+	vcom -work work "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/p1/11/osc/osctestbench00.vhdl"
+} else {
+	project open "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/p1/11/lattice/tets/tets"
+	project compileoutofdate
+}
+vsim -L work -L pmi_work -L ovi_machxo2  oscTestBench00
+view wave
+add wave /*
+run 1000ns

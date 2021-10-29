@@ -1,0 +1,1 @@
+../6/vectores-prueba-sumador-8bit.txt

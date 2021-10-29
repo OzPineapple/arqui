@@ -1,0 +1,17 @@
+if {![file exists "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/and00/and00/and00.mpf"]} { 
+	project new "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/and00/and00" and00
+	project addfile "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/and00/and00/and00.vhdl"
+	project addfile "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/and00/and00/andtestbench00.vhdl"
+	vlib  work
+	vdel -lib work -all 
+	vlib work
+	vcom -work work "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/and00/and00/and00.vhdl"
+	vcom -work work "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/and00/and00/andtestbench00.vhdl"
+} else {
+	project open "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/and00/and00/and00"
+	project compileoutofdate
+}
+vsim -L work -L pmi_work -L ovi_machxo2  andtestbench00
+view wave
+add wave /*
+run 1000ns

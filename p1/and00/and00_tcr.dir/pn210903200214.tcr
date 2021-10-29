@@ -1,0 +1,5 @@
+#Start recording tcl command: 9/3/2021 19:50:15
+#Project Location: /home/oz/docs/school/ESCOM/periods/6/arqui/repo/and00; Project name: and00
+prj_project open "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/and00/and00.ldf"
+prj_src add "/home/oz/docs/school/ESCOM/periods/6/arqui/repo/and00/t/t.spf"
+#Stop recording: 9/3/2021 20:02:14
