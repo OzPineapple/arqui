@@ -217,12 +217,6 @@ begin
 								when others => null;
 							end case;
 						when others => null;
-				-- MODO DE INICIOLIZACIÓN
-				when "11" =>
-					word  <= "1111111";
-					count <= "00000";
-					floag <= '0';
-					aux0:='0';
 				when others => null;
 			end case;
 		end if;
