@@ -15,13 +15,13 @@ end mem;
 architecture arch of mem is
 	type arrayrom is array(0 to 31) of std_logic_vector(6 downto 0);
 	constant	wordrom:	arrayrom:=(
-	"0000001", --0
-	"1001111", --1
-	"0010011", --2
-	"0010011", --2
-	-- Poner el resto
-	others => "1111111"
-);
+		"0000001", --0
+		"1001111", --1
+		"0010011", --2
+		"0010011", --2
+		-- Poner el resto
+		others => "1111111"
+	);
 begin
 	prom: process(count)
 	begin
