@@ -3,30 +3,30 @@ use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 
-entity contRead00 is
+entity reader is
 	port(
 		clock:	in		std_logic;
 		enable:	in		std_logic;
-		count:	inout	std_logic_vector(4 downto 0)
+		adress:	inout	std_logic_vector(5 downto 0)
 	);
-end contRead00;
+end reader;
 
-architecture arch of contRead00 is
+architecture arch of reader is
 begin
-	pcount: process(clock)
+	padress: process(clock)
 	begin
 	if( clock'event and clock = '1' ) then
 		case enable is
 			when '0' =>
-				ocont <= (others => '0');
+				adress <= (others => '0');
 			when '1' =>
-				if( count < "10000" ) then
-					count <= count + '1';
+				if( adress < "100000" ) then
+					adress <= adress + '1';
 				else
-					count <= count;
+					adress <= adress;
 				end if;
 			when others => null;
 		end case;
 	end if;
-	end pcount;
+	end process padress;
 end arch;

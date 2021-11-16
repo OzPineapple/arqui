@@ -21,9 +21,9 @@ architecture arch of ram is
 	signal swordram:	std_logic_vector(6 downto 0);
 begin
 	trans <= "111110";
-	ra01: countring port map();
-	ra02: coder		port map();
-	ra03: mem		port map();
+	ra01: countring port map( clock => clock, reset => reset, mode => mode, ring => ring );
+	ra02: coder		port map( clock => clock, reset => reset, mode => mode, key => key,  );
+	ra03: mem		port map(  );
 	ra04: countRead port map();
 	ra05: mux		port map();
 end arch;
