@@ -30,8 +30,7 @@ architecture arch of coder is
 begin
 	control <= (reset)&(mode);
 	pcoder: process(clock)
-		variable checkR:	std_logic_vector(3 downto 0):="0001";
-		variable checkK:	std_logic_vector(3 downto 0):="0001";
+		variable check:		std_logic_vector(3 downto 0):="0001";
 		variable press:		bit:='0';
 		variable coordR:	integer:=0;
 		variable coordK:	integer:=0;
@@ -44,24 +43,22 @@ begin
 					flag	<= '0';
 					press	:= '0';
 				when "10" =>
-					checkR  := "0001";
-					checkK  := "0001";
+					check  := "0001";
 					coordR := 0;
 					coordK := 0;
 					for i in 0 to 3 loop
-						if( checkR = ring ) then
-							report "Found equal R";
+						if( check = ring ) then
 							exit;
 						end if;
-						checkR := checkR sll 1;
+						check := check sll 1;
 						coordR := coordR + 1;
 					end loop;
+					check  := "0001";
 					for i in 0 to 3 loop
-						if( checkK = key ) then
-							report "Found equal K";
+						if( check = key ) then
 							exit;
 						end if;
-						checkK := checkK sll 1;
+						check := check sll 1;
 						coordK := coordK + 1;
 					end loop;
 					if ( key = "0000" ) then
