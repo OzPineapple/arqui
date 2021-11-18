@@ -15,7 +15,7 @@ architecture arch of countring is
 	signal scontrolr: std_logic_vector(1 downto 0);
 begin
 	scontrolr <= (reset)&(mode);
-	pshift: process()
+	pshift: process(clock)
 	begin
 		if(clock'event and clock = '1' ) then
 			case scontrolr is

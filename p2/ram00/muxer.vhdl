@@ -17,6 +17,6 @@ begin
 	control <= (reset)&(mode);
 	with control select
 		word <= code when "10",
-				   ram	when "11",
-				   "1111111" when others;
+			   ram	when "11",
+			   "1111111" when others;
 end arch;
