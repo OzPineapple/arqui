@@ -9,24 +9,25 @@ entity reader  is
 		reset:		in		std_logic;
 		mode:		in		std_logic; -- Read / Write
 		count:		in		std_logic_vector(5 downto 0);
-		read:		inout	std_logic_vector(5 downto 0)
+		adress:		inout	std_logic_vector(5 downto 0)
 	);
 end reader;
 
 architecture arch of reader is
-	signal scontrolcr: std_logic_vector(1 downto 0);
+	signal control: std_logic_vector(1 downto 0);
 begin
+	control <= (reset)&(mode);
 	pcount: process(clock)
 	begin
 		if(clock'event and clock = '1') then
-			case scontrolcr is
+			case control is
 				when "00" => 
-					read <= "000000";
+					adress <= "000000";
 				when "11" => 
-					if( read < count ) then
-						read <= read + '1';
+					if( adress < count ) then
+						adress <= adress + '1';
 					else
-						read <= read;
+						adress <= adress;
 					end if;
 				when others => null;
 			end case;

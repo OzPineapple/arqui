@@ -38,8 +38,14 @@ begin
 		wait;
 	end process;
 	keyP: process
+		variable chest: std_logic_vector(3 downto 0);
 	begin
-		wait for 2 * period;
+		wait for period;
+		chest := "0001";
+		key <= "0001";
+		wait for period;
+		key <= "0000";
+		wait for period;
 
 		key <= "0010";
 		wait for period;

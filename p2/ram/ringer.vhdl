@@ -1,24 +1,24 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity countring is
+entity ringer is
 	port(
 		clock:		in		std_logic;
 		reset:		in		std_logic;
 		mode:		in		std_logic;
 		ring:		inout	std_logic_vector(3 downto 0)
 	);
-end countring;
+end ringer;
 
-architecture arch of countring is
+architecture arch of ringer is
 	signal sshift:	std_logic_vector(3 downto 0);
-	signal scontrolr: std_logic_vector(1 downto 0);
+	signal control: std_logic_vector(1 downto 0);
 begin
-	scontrolr <= (reset)&(mode);
+	control <= (reset)&(mode);
 	pshift: process(clock)
 	begin
 		if(clock'event and clock = '1' ) then
-			case scontrolr is
+			case control is
 				when "00" =>
 					ring <= "0000";
 					sshift <= "1000";

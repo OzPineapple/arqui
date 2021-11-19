@@ -1,16 +1,19 @@
 target=test
 fontsize=22
 options=-fsynopsys -fexplicit --std=08
-time=70ns
-files=coder.vhdl test.vhdl
+time=180ns
+files=*.vhdl
 
 default:
 	make validate
 	make build
 	make simulate
+	make display
 
 simulate:
 	ghdl -r $(target) --stop-time=$(time) --vcd=sim.vcd
+
+display:
 	gtkwave sim.vcd --rcvar 'fontname_waves Monospac $(fontsize)' --rcvar 'fontname_signals Monospace $(fontsize)'
 
 validate:
@@ -18,7 +21,6 @@ validate:
 
 build:
 	ghdl -a $(options) $(files)
-	cat work-obj*
 	ghdl -e $(options) $(target)
 
 clean:
