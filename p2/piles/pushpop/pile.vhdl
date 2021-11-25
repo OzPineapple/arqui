@@ -29,9 +29,12 @@ begin
 					mem( adress ) <= push;
 					adress := adress + 1;
 				when "11" => -- Read
-					pop <= mem( adress - 1 );
+					if(adress /= 0) then
+						adress := adress - 1;
+					end if;
+					pop <= mem( adress );
 				when others => null;
-			end case
+			end case;
 		end if;
 	end process pileP;
 end arch;

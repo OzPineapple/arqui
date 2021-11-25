@@ -14,14 +14,15 @@ architecture arch of test is
 			pop:	out	std_logic_vector(7 downto 0)
 		);
 	end component;
-	signal clock:	in	std_logic;
-	signal enable:	in	std_logic;
-	signal mode:	in	std_logic;
-	signal push:	in	std_logic_vector(7 downto 0);
-	signal pop:		out	std_logic_vector(7 downto 0);
+	signal clock:	std_logic;
+	signal enable:	std_logic;
+	signal mode:	std_logic;
+	signal push:	std_logic_vector(7 downto 0);
+	signal pop:		std_logic_vector(7 downto 0);
 	constant period: time:= 2 ns;
 begin
 	conn: pile port map( clock => clock, enable => enable, mode => mode, push => push, pop => pop );
+
 	pclock: process
 	begin
 		clock <= '0';
@@ -37,5 +38,29 @@ begin
 		wait for period;
 		enable <= '1';
 		wait for period;
+		push <= "01000001";
+		wait for period;
+		push <= "01000010";
+		wait for period;
+		push <= "01000011";
+		wait for period;
+		push <= "01000100";
+		wait for period;
+		push <= "01000101";
+		wait for period;
+		push <= "01000110";
+		wait for period;
+		push <= "01000111";
+		wait for period;
+		push <= "01001000";
+		wait for period;
+		push <= "01001001";
+		wait for period;
+		push <= "01001010";
+		wait for period;
+		push <= "01001011";
+		wait for period;
+		mode <= '1';
+		wait;
 	end process pwork;
 end arch;

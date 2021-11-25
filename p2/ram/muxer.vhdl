@@ -3,17 +3,17 @@ use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 use ieee.std_logic_1164.all;
 
-entity mux is
+entity muxer is
 	port(
 		reset:		in		std_logic;
-		mode:		in		std_logic; -- Read / Write
+		mode:		in		std_logic;
 		code:		in		std_logic_vector(6 downto 0);
 		ram:		in		std_logic_vector(6 downto 0);
 		data:		out		std_logic_vector(6 downto 0)
 	);
-end mux;
+end muxer;
 
-architecture arch of mux is
+architecture arch of muxer is
 	signal control: std_logic_vector(1 downto 0);
 begin
 	control <= (reset)&(mode);

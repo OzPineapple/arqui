@@ -1,6 +1,6 @@
 target=test
 fontsize=22
-options=-fsynopsys -fexplicit --std=08
+options=-fsynopsys -fexplicit
 time=180ns
 files=*.vhdl
 
