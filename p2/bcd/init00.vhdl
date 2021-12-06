@@ -1,7 +1,5 @@
 library ieee;
 use ieee.std_logic_1164.all;
-library lattice;
-use lattice.all;
 
 entity init00 is
   port(
