@@ -26,7 +26,7 @@ scontrol <= (RSTuc)&(ENuc)&(inFlagIteruc)&(inFlagAC12uc)&(inFlagAC8uc)&(inFlagCo
 				   "001" when "1100000",
 				   "001" when "1100001",
 				   "010" when "1101101",
-				   "010" when "1100101",--
+				   "010" when "1100101", --
 				   "010" when "1101001",
 				   "011" when "1100011",
 				   "011" when "1101011",
@@ -37,7 +37,7 @@ scontrol <= (RSTuc)&(ENuc)&(inFlagIteruc)&(inFlagAC12uc)&(inFlagAC8uc)&(inFlagCo
 				   "100" when "1001101",
 				   "100" when "1001011",
 				   "110" when "1110011",
-				   "110" when "1110001",--
+				   "110" when "1110001", --
 				   "110" when "1111001",
 				   "101" when "0100101",
 				   "101" when "0101001",

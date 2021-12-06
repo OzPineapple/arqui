@@ -63,7 +63,7 @@ scontrol <= (resetIter)&(enableIter)&(inFlagIter);
 			 outFlagIterA <= '0';
 			 outFlagIterB <= '1';
 		  end if;
-------------------------------------------------------------
+ ------------------------------------------------------------
 		when "111" =>
           case aux2 is
 		    when '0' =>
@@ -85,7 +85,7 @@ scontrol <= (resetIter)&(enableIter)&(inFlagIter);
 			  end if;
 			when others => null;
 		  end case;
------------------------------------------------------------
+ -----------------------------------------------------------
 		when "100" =>
           case aux3 is
 		    when '0' =>
@@ -95,7 +95,7 @@ scontrol <= (resetIter)&(enableIter)&(inFlagIter);
 			  if (outContIter < "0111") then
 			    outContIter <= outContIter;
 		        outFlagIterA <= '0';
-		        outFlagIterB <= '0';--para entrar al caso "110" en la salida de la uc00
+		        outFlagIterB <= '0'; --para entrar al caso "110" en la salida de la uc00
 			  else
 			    outContIter <= outContIter;
 		        outFlagIterA <= '1';
@@ -107,7 +107,7 @@ scontrol <= (resetIter)&(enableIter)&(inFlagIter);
 			  aux3:='0';
 			when others => null;
 		  end case;
-------------------------------------------------------------
+ ------------------------------------------------------------
 	    when "101" =>
           case aux4 is
 		    when '0' =>
@@ -118,7 +118,7 @@ scontrol <= (resetIter)&(enableIter)&(inFlagIter);
 			  if (outContIter < "0111") then
 			    outContIter <= outContIter;
 		        outFlagIterA <= '0';
-		        outFlagIterB <= '0';--para entrar al caso "110" en la salida de la uc00
+		        outFlagIterB <= '0'; --para entrar al caso "110" en la salida de la uc00
 			  else
 			    outContIter <= outContIter;
 		        outFlagIterA <= '1';
@@ -131,7 +131,7 @@ scontrol <= (resetIter)&(enableIter)&(inFlagIter);
 			  aux4:='0';
 			when others => null;
 		  end case;
-------------------------------------------------------------
+ ------------------------------------------------------------
 		when others => null;
 	  end case;
 	end if;
