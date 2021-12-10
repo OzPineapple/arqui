@@ -1,8 +1,9 @@
 library ieee;
+library work;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
-use packagebcd00.all;
+use work.packagebcd00.all;
 
 entity bcd00 is
   port(
@@ -44,10 +45,10 @@ begin
 F1F2F30 <= sF1F2F3;
 
 
-  BC00: osc00 port map(oscout0 => clk0,
-                       oscout1 => clk1,
-                       cdiv => cdiv0,
-					   cdiv1 => cdiv01);
+--  BC00: osc00 port map(oscout0 => clk0,
+--                       oscout1 => clk1,
+--                       cdiv => cdiv0,
+--					   cdiv1 => cdiv01);
   
   BC01: init00 port map(clkinit => clk0,
                         opcodeinit => outCode0,

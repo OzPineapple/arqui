@@ -1,9 +1,9 @@
-
 library ieee;
+library work;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
-use packagebcd00.all;
+use work.packagebcd00.all;
 
 entity test is
 end test;
@@ -63,6 +63,32 @@ architecture arch of test is
 	signal outBCD0: std_logic_vector(6 downto 0 );
 	constant period: time := 4 ns;
 begin
+	conn: bcd00 port map(
+			   clk0 => clk0,
+			   clk1 => clk1,
+			   cdiv0 => cdiv0,
+			   cdiv01 => cdiv01,
+			   reset0 => reset0,
+			   enable0 => enable0,
+			   inData0 => inData0,
+			   --soutFlagI120 => soutFlagI120,
+			   soutFlagITER0 => soutFlagITER0,
+			   soutFlagAC8 => soutFlagAC8,
+			   soutFlagAC12 => soutFlagAC12,
+			   outpc0 => outpc0,
+			   outCode0 => outCode0,
+			   outFlagpc0 => outFlagpc0,
+			   outFlagCode0 => outFlagCode0,
+			   outFlagch0 => outFlagch0,
+			   outContIter0 => outContIter0,
+			   outFlagIterA0 => outFlagIterA0,
+			   outFlagIterB0 => outFlagIterB0,
+			   outAC12LED0 => outAC12LED0,
+			   outAC80 => outAC80,
+			   F1F2F30 => F1F2F30,
+			   outTransist0 => outTransist0,
+			   outBCD0 => outBCD0
+		   );
 	pclock0: process
 	begin
 		clk0 <= '0';
@@ -81,14 +107,16 @@ begin
 
 	pcontrol: process
 	begin
-		enable <= '0';
-		reset <= '0';
+		enable0 <= '0';
+		reset0 <= '0';
 		wait for period * 2;
-		reset <= '1';
-		enable <= '0';
+		reset0 <= '1';
+		enable0 <= '0';
 		wait for period;
-		reset <= '1';
-		enable <= 'r';
+		reset0 <= '0';
+		enable0 <= '1';
+		wait for period;
+		inData0 <= "11111110";
 		wait;
 	end process pcontrol;
 end arch;
