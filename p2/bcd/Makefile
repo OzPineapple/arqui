@@ -30,10 +30,10 @@ default:
 	make display
 
 simulate:
-	ghdl -r $(target) --stop-time=$(time) --vcd=sim.vcd
+	ghdl -r $(target) --stop-time=$(time) --vcd=sim.vcd &
 
 display:
-	gtkwave sim.vcd --rcvar 'fontname_waves Monospac $(fontsize)' --rcvar 'fontname_signals Monospace $(fontsize)'
+	gtkwave sim.vcd --rcvar 'fontname_waves Monospac $(fontsize)' --rcvar 'fontname_signals Monospace $(fontsize)' &
 
 validate:
 	ghdl -s $(options) $(files)

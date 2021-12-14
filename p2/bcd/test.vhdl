@@ -107,16 +107,20 @@ begin
 
 	pcontrol: process
 	begin
+		inData0 <= "11111110";
+		outFlagIterA0	<= '0'; --se pone en '1' al llegar 8 iteraciones
+		soutFlagAC12	<= '0'; --viene del acumulador de 12
+		soutFlagAC8		<= '0'; --viene del acumulador de 8
+		outFlagch0		<= '0'; --viene del módulo "checkCode00"
+		outFlagIterB0	<= '0'; -- indica inicializacion del proceso
 		enable0 <= '0';
 		reset0 <= '0';
-		wait for period * 2;
+		wait for period * 10;
 		reset0 <= '1';
 		enable0 <= '0';
-		wait for period;
-		reset0 <= '0';
+		wait for period * 10;
+		reset0 <= '1';
 		enable0 <= '1';
-		wait for period;
-		inData0 <= "11111110";
 		wait;
 	end process pcontrol;
 end arch;
