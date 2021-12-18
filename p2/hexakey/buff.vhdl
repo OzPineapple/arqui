@@ -17,7 +17,7 @@ end buff;
 architecture arch of buff is
 	signal chest: std_logic_vector( 31 downto 0 );
 begin
-	pbuff: process(  clock )
+	pbuff: process( clock )
 		variable counter: integer;
 	begin
 		if( clock'event and clock = '1' ) then
@@ -31,8 +31,8 @@ begin
 						counter := 0;
 					end if;
 					chest( (31 - (counter*4) ) downto (28 - (counter*4)) ) <= code;
-					counter := counter + 1;
 					memo <= chest;
+					counter := counter + 1;
 				end if;
 			end if;
 		end if;
